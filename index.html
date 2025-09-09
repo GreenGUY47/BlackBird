@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Screen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('Pictures/lion.png') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-box {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      width: 300px;
+    }
+    .login-box h1 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+    .login-box input {
+      width: 85%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+    }
+    .password-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .password-box input {
+      width: 100%;
+      padding-right: 40px;
+    }
+    .toggle-eye {
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      color: #ccc;
+    }
+    .toggle-eye:hover {
+      color: white;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background: #3498db;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .login-box button:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>Welcome to Academy</h1>
+    <input type="text" id="username" placeholder="Enter Username">
+    <div class="password-box">
+      <input type="password" id="password" placeholder="Enter Password">
+      <span class="toggle-eye" onclick="togglePassword()">👁</span>
+    </div>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+    function login() {
+      let password = document.getElementById("password").value;
+      if (password === "hamd-rehman11") {
+        window.location.href = "attendence.html";
+      } else {
+        alert("Invalid Password! Try again.");
+      }
+    }
+
+    function togglePassword() {
+      let passField = document.getElementById("password");
+      if (passField.type === "password") {
+        passField.type = "text";
+      } else {
+        passField.type = "password";
+      }
+    }
+  </script>
+</body>
+</html>
